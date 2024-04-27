@@ -10,22 +10,25 @@
       <a :href="socialMediaLinks.github" target="_blank">
         <font-awesome-icon :icon="['fab', 'github']" />
       </a>
-      <a>     </a>
+
       <a :href="socialMediaLinks.telegram" target="_blank">
         <font-awesome-icon :icon="['fab', 'telegram']" />
       </a>
-      <a>     </a>
+
       <a :href="socialMediaLinks.twitter" target="_blank">
         <font-awesome-icon :icon="['fab', 'twitter']" />
       </a>
     </div>
   </div>
+
 </template>
+
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import axios from 'axios';
+import vuetyped from 'vue3typed';
 
 library.add(fab)
 
@@ -59,15 +62,28 @@ export default {
     document.querySelector('link[rel="icon"]').href = this.avatarUrl;
   }
 
+
 }
 </script>
 
 <style scoped>
-
 .profile {
-  width: max-content ;
+  width: max-content;
+  position: relative;
+  animation: flyIn 0.5s ease-out forwards;
+  word-break: break-word;
 }
 
+@keyframes flyIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 .name-container {
   display: block;
@@ -100,21 +116,40 @@ export default {
 .poetry:hover {
   background-color: transparent;
 }
+
 .social-media-links a {
   font-size: 3em;
   margin-bottom: 10px;
+  transition: filter 0.5s ease-in-out, transform 0.3s ease-in-out;
+  filter: grayscale(0%);
+  margin-right: 15px
+
 }
 
+.social-media-links a:hover {
+  filter: grayscale(100%); /* 悬停时变为灰色 */
+  transform: scale(1.2);
+}
+
+.social-media-links a:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);}
+
 .avatar {
-  width: 150px; /* Adjust the size as needed */
-  height: 150px; /* Make sure this is the same as the width to maintain the circular shape */
-  border-radius: 50%; /* Make the image circular */
-  margin-bottom: 20px; /* Add some space below the image */
-  transition: transform 0.3s ease-in-out; /* Add a transition effect for the hover effect */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: filter 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .avatar:hover {
-  transform: scale(1.1); /* Make the image 10% larger when hovered */
+  transform: scale(1.2);
+}
+
+.avatar:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 </style>
