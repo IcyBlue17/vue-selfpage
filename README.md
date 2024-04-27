@@ -1,28 +1,28 @@
-# self-introduction-page
+# vue-selfpage
 
-This template should help get you started developing with Vue 3 in Vite.
+这是IcyMichiko的个人引导页，使用vue.js构建  
 
-## Recommended IDE Setup
+如果你喜欢，可以尝试自行部署。  
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 克隆该项目
 
-## Customize configuration
+```sh
+git clone https://github.com/IcyBlue17/vue-selfpage.git
+```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## 安装依赖
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 测试
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### 构建
 
 ```sh
 npm run build

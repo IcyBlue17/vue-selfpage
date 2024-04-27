@@ -55,6 +55,10 @@ export default {
           console.error(error);
         });
   },
+  mounted() {
+    document.querySelector('link[rel="icon"]').href = this.avatarUrl;
+  }
+
 }
 </script>
 
