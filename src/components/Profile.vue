@@ -1,11 +1,14 @@
 <template>
   <div class="profile">
     <img class="avatar" :src="avatarUrl" alt="Avatar of IcyMichiko">
-    <div class="name-container">
-      <h1 class="name">{{ name }}</h1>
+    <div class="name-container" v-if="isMobile">
+      <h1 class="name">IcyMichiko</h1>
+    </div>
+    <div class="name-container" v-else>
+      <h1 class="name">👋Hi,I am IcyMichiko</h1>
       <span class="subtitle">/ 只是一个普通学生</span>
     </div>
-    <p class="poetry">{{ hitokoto }}</p>
+    <p class="poetry" v-if="!isMobile">{{ hitokoto }}</p>
     <div class="social-media-links">
       <a :href="socialMediaLinks.github" target="_blank">
         <font-awesome-icon :icon="['fab', 'github']" />
@@ -19,6 +22,9 @@
         <font-awesome-icon :icon="['fab', 'twitter']" />
       </a>
     </div>
+    <div>
+      <a href="http://www.beian.miit.gov.cn/" target="_blank">琼ICP备2024028360号</a>
+    </div>
   </div>
 
 </template>
@@ -28,7 +34,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import axios from 'axios';
-import vuetyped from 'vue3typed';
 
 library.add(fab)
 
@@ -41,6 +46,7 @@ export default {
     return {
       name: '👋Hi,I am IcyMichiko',
       hitokoto: '一言获取中...',
+      isMobile: false,
        avatarUrl: 'https://static.ick.moe/images/avatar.png',
       socialMediaLinks: {
         github: 'https://github.com/IcyBlue17',
@@ -60,6 +66,7 @@ export default {
   },
   mounted() {
     document.querySelector('link[rel="icon"]').href = this.avatarUrl;
+    this.isMobile = window.matchMedia('(max-width: 600px)').matches;
   }
 
 
@@ -151,5 +158,55 @@ export default {
   transform: scale(0.9);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+html, body {
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    animation: flyIn 0.5s ease-out forwards;
+    word-break: break-word;
+  }
 
+  .name {
+    font-size: 3.3em;
+  }
+
+  .subtitle {
+    font-size: 1.1em;
+  }
+
+  .poetry {
+    font-size: 1.1em;
+  }
+
+  .social-media-links a {
+    font-size: 2.2em;
+  }
+
+  .avatar {
+    width: 110px;
+    height: 110px;
+  }
+
+  .profile, .name, .subtitle, .poetry, .social-media-links a, .avatar {
+    transform: scale(1.1);
+  }
+}
 </style>
