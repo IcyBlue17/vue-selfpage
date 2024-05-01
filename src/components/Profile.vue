@@ -20,10 +20,16 @@
 
       <a :href="socialMediaLinks.twitter" target="_blank">
         <font-awesome-icon :icon="['fab', 'twitter']" />
+
       </a>
-    </div>
+
+      <a :href="socialMediaLinks.wubaipx" target="_blank">
+        <font-awesome-icon :icon="['fab', '500px']" />
+
+      </a>
+</div>
     <div>
-      <a href="http://www.beian.miit.gov.cn/" target="_blank">琼ICP备2024028360号</a>
+      <a href="https://beian.miit.gov.cn/" target="_blank">琼ICP备2024028360号</a>
     </div>
   </div>
 
@@ -52,6 +58,7 @@ export default {
         github: 'https://github.com/IcyBlue17',
         telegram: 'https://t.me/IcyLiqu1d',
         twitter: 'https://twitter.com/IcyLiqu1d',
+        wubaipx: 'https://500px.com.cn/Icy0',
       }
     }
   },
