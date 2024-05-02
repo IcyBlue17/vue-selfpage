@@ -10,27 +10,32 @@
     </div>
     <p class="poetry" v-if="!isMobile">{{ hitokoto }}</p>
     <div class="social-media-links">
-      <a :href="socialMediaLinks.github" target="_blank">
+
+      <a :href="socialMediaLinks.blog" target="_blank" :title="'IcyBlog'">
+        <i class="mdui-icon material-icons mdui">&#xe157;</i>
+      </a>
+
+      <a :href="socialMediaLinks.github" target="_blank" :title="'Github'">
         <font-awesome-icon :icon="['fab', 'github']" />
       </a>
 
-      <a :href="socialMediaLinks.telegram" target="_blank">
+      <a :href="socialMediaLinks.telegram" target="_blank" :title="'Telegram'">
         <font-awesome-icon :icon="['fab', 'telegram']" />
       </a>
 
-      <a :href="socialMediaLinks.twitter" target="_blank">
+      <a :href="socialMediaLinks.twitter" target="_blank" :title="'Twitter'">
         <font-awesome-icon :icon="['fab', 'twitter']" />
 
       </a>
 
+      <a :href="socialMediaLinks.blbl" target="_blank" :title="'Bilibili'">
+        <font-awesome-icon :icon="['fab', 'bilibili']" />
+      </a>
+
       <a :href="socialMediaLinks.wubaipx" target="_blank">
         <font-awesome-icon :icon="['fab', '500px']" />
-
       </a>
 </div>
-    <div>
-      <a href="https://beian.miit.gov.cn/" target="_blank">琼ICP备2024028360号</a>
-    </div>
   </div>
 
 </template>
@@ -59,6 +64,8 @@ export default {
         telegram: 'https://t.me/IcyLiqu1d',
         twitter: 'https://twitter.com/IcyLiqu1d',
         wubaipx: 'https://500px.com.cn/Icy0',
+        blog: 'https://blog.icybit.cn',
+       blbl: 'https://space.bilibili.com/326609625',
       }
     }
   },
@@ -71,10 +78,12 @@ export default {
           console.error(error);
         });
   },
+
   mounted() {
     document.querySelector('link[rel="icon"]').href = this.avatarUrl;
     this.isMobile = window.matchMedia('(max-width: 600px)').matches;
   }
+
 
 
 }
@@ -115,6 +124,10 @@ export default {
   color: gray;
   margin-left: 10px;
   display: inline;
+}
+
+.mdui {
+  font-size: 1.5em;
 }
 
 .poetry {
@@ -189,6 +202,7 @@ html, body {
     position: relative;
     animation: flyIn 0.5s ease-out forwards;
     word-break: break-word;
+
   }
 
   .name {

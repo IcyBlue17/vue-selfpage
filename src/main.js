@@ -3,4 +3,6 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+
+import VTooltip from 'v-tooltip'
+createApp(App).use(VTooltip).mount('#app')
