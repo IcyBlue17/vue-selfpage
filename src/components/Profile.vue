@@ -35,7 +35,9 @@
       <a :href="socialMediaLinks.wubaipx" target="_blank">
         <font-awesome-icon :icon="['fab', '500px']" />
       </a>
+
 </div>
+    <a href="https://beian.miit.gov.cn/" target="_blank">琼ICP备2024028360号</a>
   </div>
 
 </template>
