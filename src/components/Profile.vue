@@ -120,7 +120,7 @@ export default {
   display: inline;
 }
 
-.subtitle {
+  .subtitle {
   font-size: 2em;
   color: gray;
   margin-left: 10px;
@@ -183,6 +183,9 @@ html, body {
   overflow: hidden;
 }
 @media (max-width: 600px) {
+  .subtitle {
+    color: white;
+  }
   html, body {
     height: 100%;
     width: 100%;
@@ -190,6 +193,7 @@ html, body {
     margin: 0;
     padding: 0;
   }
+
   .profile {
     display: flex;
     flex-direction: column;
@@ -205,6 +209,8 @@ html, body {
     word-break: break-word;
 
   }
+
+
 
   .name {
     font-size: 3.3em;
