@@ -59,7 +59,7 @@ export default {
       name: '👋Hi,I am IcyMichiko',
       hitokoto: '一言获取中...',
       isMobile: false,
-       avatarUrl: 'https://static.ick.moe/images/avatar.png',
+       avatarUrl: 'https://icybit.cn/avatar.png',
       socialMediaLinks: {
         github: 'https://github.com/IcyBlue17',
         telegram: 'https://t.me/IcyLiqu1d',
